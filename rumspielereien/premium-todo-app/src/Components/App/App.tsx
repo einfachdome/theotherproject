@@ -3,18 +3,18 @@ import { TopBar } from "../TopBar/TopBar";
 import { TodoList } from "../TodoList/TodoList";
 
 function App() {
-  const [todos, setTodos] = useState<
-    {
-      todo: string;
-      complete: boolean;
-      created: Date;
-      done: Date;
-    }[]
-  >();
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  const createTodo = (todo: string, created: string) => {
+    setTodos([
+      ...todos,
+      { todo: todo, complete: false, created: created, done: undefined },
+    ]);
+  };
 
   return (
     <main className="App">
-      <TopBar />
+      <TopBar createTodo={createTodo} />
       <TodoList />
     </main>
   );

@@ -1,6 +1,8 @@
 type Todo = {
   todo: string;
   complete: boolean;
-  created: Date;
-  done: Date | undefined;
+  created: string;
+  done: string | undefined;
 };
+
+type createTodo = (todo: string, created: string) => void;
