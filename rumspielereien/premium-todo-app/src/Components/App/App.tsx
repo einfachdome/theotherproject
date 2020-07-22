@@ -15,7 +15,7 @@ function App() {
   return (
     <main className="App">
       <TopBar createTodo={createTodo} />
-      <TodoList />
+      <TodoList todos={todos} />
     </main>
   );
 }
