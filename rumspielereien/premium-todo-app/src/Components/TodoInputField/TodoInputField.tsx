@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from "react";
 
 export const TodoInputField = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  const [todo, setTodo] = useState<string>();
+
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTodo(event.target.value);
+  };
+
+  return <input type="text" onChange={onChangeHandler} />;
+};
